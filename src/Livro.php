@@ -14,34 +14,51 @@ class Livro
         $this->paginas = $paginas;
     }
 
-
-    public function setTitulo(string $titulo): void
-    {
-        $this->titulo = $titulo;
-    }
-
+    /**
+     * @return string
+     */
     public function getTitulo(): string
     {
         return $this->titulo;
     }
 
-    public function setAutor(string $autor): void
+    /**
+     * @param  string  $titulo
+     */
+    public function setTitulo(string $titulo): void
     {
-        $this->autor = $autor;
+        $this->titulo = $titulo;
     }
 
+    /**
+     * @return string
+     */
     public function getAutor(): string
     {
         return $this->autor;
     }
 
-    public function setPaginas(int $paginas): void
+    /**
+     * @param  string  $autor
+     */
+    public function setAutor(string $autor): void
     {
-        $this->paginas = $paginas;
+        $this->autor = $autor;
     }
 
+    /**
+     * @return int
+     */
     public function getPaginas(): int
     {
         return $this->paginas;
+    }
+
+    /**
+     * @param  int  $paginas
+     */
+    public function setPaginas(int $paginas): void
+    {
+        $this->paginas = $paginas;
     }
 }
