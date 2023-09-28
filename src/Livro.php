@@ -7,13 +7,6 @@ abstract class Livro
     private int $paginas = 0;
 
 
-    public function __construct(string $titulo, string $autor, int $paginas)
-    {
-        $this->titulo  = $titulo;
-        $this->autor   = $autor;
-        $this->paginas = $paginas;
-    }
-
     /**
      * @return string
      */

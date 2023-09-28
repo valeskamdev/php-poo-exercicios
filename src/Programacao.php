@@ -1,22 +1,24 @@
 <?php
 
-class Programacao extends Tecnico
+require_once "Tecnico.php";
+
+final class Programacao extends Tecnico
 {
-    private string $atuacao;
+    private string $area;
 
     /**
      * @return string
      */
-    public function getAtuacao(): string
+    public function getArea(): string
     {
-        return $this->atuacao;
+        return $this->area;
     }
 
     /**
-     * @param  string  $atuacao
+     * @param  string  $area
      */
-    public function setAtuacao(string $atuacao): void
+    public function setArea(string $area): void
     {
-        $this->atuacao = $atuacao;
+        $this->area = $area;
     }
 }

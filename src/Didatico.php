@@ -1,6 +1,8 @@
 <?php
 
-class Didatico extends Tecnico
+require_once "Tecnico.php";
+
+final class Didatico extends Tecnico
 {
     private string $disciplina;
     private array $nivel = ["básico", "médio", "superior"];
@@ -22,11 +24,11 @@ class Didatico extends Tecnico
     }
 
     /**
-     * @return string
+     * @return array
      */
-    public function getNivel(): string
+    public function getNivel(): array
     {
-        return implode(", ", $this->nivel);
+        return $this->nivel;
     }
 
     /**

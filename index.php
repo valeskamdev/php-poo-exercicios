@@ -1,11 +1,31 @@
 <?php
-require_once "src/Livro.php";
+require_once "src/Tecnico.php";
+require_once "src/Programacao.php";
+require_once "src/Didatico.php";
 
-$livroA = new Livro("Dom Quixote", "Miguel de Cervantes", 325);
-$livroB = new Livro("A Metamorfose", "Franz Kafka", 213);
-$livroC = new Livro("1984", "George Orwell", 2);
+$livroTecnico = new Tecnico();
+$livroProgramacao = new Programacao();
+$livroDidatico = new Didatico();
 
-$livroC->setPaginas(112);
+$livroTecnico->setTitulo("Introdução à Inteligência Artificial");
+$livroTecnico->setAutor("Stuart Russell e Peter Norvig");
+$livroTecnico->setPaginas(1982);
+$livroTecnico->setFormato(["digital"]);
+
+$livroProgramacao->setTitulo("Aprenda Python 3 do Zero");
+$livroProgramacao->setAutor("Daniel Góes");
+$livroProgramacao->setPaginas(312);
+$livroProgramacao->setArea("Back End");
+$livroProgramacao->setFormato(["fisico"]);
+
+$livroDidatico->setTitulo("História Geral: Da Pré-História aos Dias Atuais");
+$livroDidatico->setAutor("Maria Luiza Marcilio");
+$livroDidatico->setPaginas(543);
+$livroDidatico->setNivel(["superior"]);
+$livroDidatico->setDisciplina("História");
+$livroDidatico->setFormato(["fisico"]);
+
+var_dump($livroTecnico, $livroProgramacao, $livroDidatico);
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -16,67 +36,36 @@ $livroC->setPaginas(112);
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Exercício POO</title>
   <style>
-    body {
-      background-color: #f9f9f9;
-
-    }
-
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    ul > li {
-      margin-bottom: 20px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      padding: 10px;
-    }
-
-    ul > li > b {
-      font-weight: bold;
-    }
-
-    ul ul {
-      list-style-type: none;
-      padding: 0;
-      margin-top: 10px;
-    }
-
-    ul ul > li {
-      margin-bottom: 5px;
-      font-weight: normal;
-    }
-
-    ul ul > li > b {
-      font-weight: bold;
-    }
-
-    ul ul {
-      border-left: 3px solid #0077cc;
-      padding-left: 10px;
-    }
   </style>
 </head>
 <body>
     <h1>Livros famosos</h1>
 
-    <ul>
-      <li><b>Título:</b> <?=$livroA->getTitulo()?>
-      <ul>
-        <li><b>Autor:</b> <?=$livroA->getAutor()?></li>
-        <li><b>N° de páginas:</b> <?=$livroA->getPaginas()?></li>
-      </ul></li>
-      <li><b>Título:</b> <?=$livroB->getTitulo()?>
-      <ul>
-        <li><b>Autor:</b> <?=$livroB->getAutor()?></li>
-        <li><b>N° de páginas:</b><?=$livroB->getPaginas()?></li>
-      </ul></li>
-      <li><b>Título:</b> <?=$livroC->getTitulo()?>
-      <ul>
-        <li><b>Autor:</b> <?=$livroC->getAutor()?></li>
-        <li><b>N° de páginas:</b> <?=$livroC->getPaginas()?></li>
-      </ul></li>
-    </ul>
+    <h2>Livro Técnico</h2>
+
+    <h3><?= $livroTecnico->getTitulo() ?></h3>
+    <p>Autor: <?= $livroTecnico->getAutor() ?></p>
+    <p>Páginas: <?= $livroTecnico->getPaginas() ?></p>
+    <p>Formato: <?= $livroTecnico->getFormato() ?></p>
+
+    <h2>Livro de Programação</h2>
+
+    <h3><?= $livroProgramacao->getTitulo() ?></h3>
+    <p>Autor: <?= $livroProgramacao->getAutor() ?></p>
+    <p>Páginas: <?= $livroProgramacao->getPaginas() ?></p>
+    <p>Área: <?= $livroProgramacao->getArea() ?></p>
+    <p>Formato: <?= $livroProgramacao->getFormato() ?></p>
+
+    <h2>Livro Didático</h2>
+
+    <h3><?= $livroDidatico->getTitulo() ?></h3>
+    <p>Autor: <?= $livroDidatico->getAutor() ?></p>
+    <p>Páginas: <?= $livroDidatico->getPaginas() ?></p>
+    <?php foreach ($livroDidatico->getNivel() as $nivel) : ?>
+      <p>Nível: <?= $nivel . " " ?></p>
+    <?php endforeach; ?>
+    <p>Disciplina: <?= $livroDidatico->getDisciplina() ?></p>
+    <p>Formato: <?= $livroDidatico->getFormato() ?></p>
+
 </body>
 </html>
