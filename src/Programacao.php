@@ -1,8 +1,7 @@
 <?php
+namespace Livraria;
 
-require_once "Tecnico.php";
-
-final class Programacao extends Tecnico
+class Programacao extends Tecnico
 {
     private string $area;
 

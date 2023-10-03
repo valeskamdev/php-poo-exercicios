@@ -1,11 +1,12 @@
 <?php
-require_once "src/Tecnico.php";
-require_once "src/Programacao.php";
-require_once "src/Didatico.php";
+require_once "vendor/autoload.php";
+
+use Livraria\ { Tecnico, Programacao, Didatico, Web };
 
 $livroTecnico = new Tecnico();
 $livroProgramacao = new Programacao();
 $livroDidatico = new Didatico();
+$livroWeb = new Web();
 
 $livroTecnico->setTitulo("Introdução à Inteligência Artificial");
 $livroTecnico->setAutor("Stuart Russell e Peter Norvig");
@@ -25,7 +26,7 @@ $livroDidatico->setNivel(["superior"]);
 $livroDidatico->setDisciplina("História");
 $livroDidatico->setFormato(["fisico"]);
 
-var_dump($livroTecnico, $livroProgramacao, $livroDidatico);
+var_dump($livroTecnico, $livroProgramacao, $livroDidatico, $livroWeb);
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -34,7 +35,7 @@ var_dump($livroTecnico, $livroProgramacao, $livroDidatico);
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Exercício POO</title>
+  <title>Exercício POO 3</title>
   <style>
   </style>
 </head>

@@ -1,0 +1,9 @@
+{
+  "name": "valeska/php-poo-exercicios",
+  "description": "Exemplo de projeto PHP com Orientação a Objetos e com classe gerenciada pelo Composer",
+  "autoload": {
+    "psr-4": {
+      "Livraria\\": "src/"
+    }
+  }
+}
